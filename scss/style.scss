@@ -1,0 +1,245 @@
+@import "mixins.scss";
+
+$fuente: "Poppins", sans-serif;
+
+$negro: #070d15;
+$blanco: #ffffff;
+$gris: #909090;
+$grisOscuro: #949494;
+$azul: #264065;
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: $fuente;
+  font-size: 16px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  nav {
+    margin-left: auto;
+
+    ul {
+      display: flex;
+      gap: 50px;
+
+      a {
+        font-family: $fuente;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $azul;
+        position: relative;
+      }
+
+      .desplegable::after {
+        content: "";
+        display: block;
+        background-image: url("../img/chevron-down.svg");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 2px;
+        right: -30px;
+      }
+    }
+  }
+
+  .buttonsFunc {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: 50px;
+    font-size: 18px;
+  }
+
+  .buttonsAcc {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__signin {
+      text-decoration: underline;
+      color: $azul;
+    }
+
+    &__signup {
+      background-color: $azul;
+      color: $blanco;
+      padding: 15px 30px;
+      border-radius: 100px;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 80px;
+  position: relative;
+
+  background-image: url("../img/hero.png");
+  background-repeat: no-repeat;
+  background-position: 380px -120px;
+  background-size: 90%;
+
+  h1 {
+    color: #264065;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    width: 60%;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    color: $gris;
+    width: 55%;
+    margin-bottom: 50px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 90px;
+
+    .btn {
+      background-color: $azul;
+      color: $blanco;
+      padding: 15px 30px;
+      border-radius: 100px;
+    }
+
+    .cta {
+      color: $azul;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url("../img/Play.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        left: -55px;
+        top: -10px;
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 10px;
+        box-shadow: (0px 24px 50px rgba(0, 0, 0, 0.15));
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: $blanco;
+    bottom: 15%;
+    padding: 30px;
+    gap:50px;
+    border-radius: 16px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap:15px;
+
+      span {
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: $azul;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: $grisOscuro;
+        width: 80%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__testimonials {
+    
+    .testimonial {
+      position:absolute;
+      top:25%;
+      right: -12%;
+      width: 25%;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      color:$negro;
+      padding: 20px;
+      border-radius: 16px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap:10px;
+
+      span {
+        color: $azul;
+        font-weight: 700;
+      }
+    }
+    .testimonial-variation {
+      position:absolute;
+      bottom: 20%;
+      right: -5%;
+      width: 25%;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      color:$negro;
+      padding: 20px;
+      border-radius: 16px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap:10px;
+    }
+  }
+}
